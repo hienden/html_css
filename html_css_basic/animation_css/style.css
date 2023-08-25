@@ -1,0 +1,21 @@
+/* Transition css */
+* {
+  padding: 0;
+  margin: 0;
+}
+.box {
+  width: 50px;
+  height: 50px;
+}
+.blue {
+  background-color: blue;
+  transition-property: background-color; /* Khai báo thuộc tính muốn áp dụng transition */
+  transition-duration: 2s; /* Khai báo khoảng thời gian giữa 2 lần thay đổi */
+  transition-delay: 2000ms; /* Sau khoảng thời gian 2s thì mới áp dụng transition-duration */
+}
+.blue:hover {
+  background-color: brown;
+}
+.yellow {
+  background-color: yellow;
+}

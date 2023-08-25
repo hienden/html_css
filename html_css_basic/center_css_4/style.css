@@ -1,0 +1,35 @@
+/*Căn giữa 1 block element theo chiều dọc và ngang : sử dụng flex box */
+/* display: flex;
+justify-content: center;
+align-items: center; */
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: content; mặc định tổng Chiều cao của container = height 200 + border top 5 + border bottom 5 = 210 */
+  box-sizing: border-box; /*thì tổng Chiều cao của container = height 200 = border top 5 + border bottom 5 + cc content 190;*/
+}
+body {
+  height: 100vh;
+  background-color: ghostwhite;
+  border: 1px solid gold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  border: 5px solid green;
+  width: 60%;
+
+  text-align: center;
+  height: 200px;
+  line-height: 200px; /**/
+}
+.container p {
+  border: 1px solid yellow;
+  display: inline-block; /**/
+  line-height: normal; /**/
+  vertical-align: middle; /**/
+}

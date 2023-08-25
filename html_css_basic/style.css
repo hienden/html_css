@@ -1,47 +1,91 @@
-/* * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* 1. Intenal, External: External: Nhúng Link <link rel="stylesheet" href="style.css" />
+   Internal:   
+    <style>
+      h1 {
+  color: red;
 }
-.container {
-  width: 100vw;
-  height: 800px;
-  border: 5px solid gray;
-}
-.box {
-  height: 200px;
-  padding: 10px;
-}
-.box p {
-  font-size: 20px;
-  color: white;
-}
-.box-1 {
-  background-color: rgb(248, 99, 31);
-}
-.box-2 {
-  background-color: rgb(48, 197, 28);
-}
-.box-3 {
-  background-color: rgb(33, 36, 233);
+</style>
+2. Inline - 1000 : css trong DOM html (<h1 style="color: blue">Header</h1>)
+3. #id - 100
+4. .class - 10
+5. tag - 1
+6. Equal specificity? 
+ h1#title.header (111) có độ ưu tiên hơn #title.header (110)
+7. Universal selector and inherited? (thẻ con thừa hưởng css của thẻ cha)
+Universal
+* {
+  color: yellow;
 } */
-
-/* ------------------------------ */
 
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 body {
   padding: 20px;
+}
+.container {
+  display: grid;
+  height: 100vh;
+  width: 80%;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 300px 200px 100px;
+
+  grid-template-areas:
+    "header header header"
+    "sidebar content content"
+    "sidebar content content"
+    "footer footer footer";
+
+  column-gap: 10px;
+  row-gap: 10px;
 }
 .item {
   background-color: gold;
   border: 1px solid grey;
   min-height: 50px;
+  padding: 20px;
+  font-size: 20px;
 }
-.container {
+.item-1 {
+  grid-area: header;
+}
+.item-2 {
+  grid-area: sidebar;
+}
+.item-3 {
+  grid-area: content;
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 200px 100px;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 5px;
+  row-gap: 5px;
+}
+.item-4 {
+  grid-area: footer;
+}
+.article {
+  border: 5px solid rgb(255, 0, 106);
+}
+
+/* @media (max-width: 900px) {
+  .item-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */
+@media (max-width: 500px) {
+  /* .item-3 {
+    grid-template-columns: 1fr;
+  } */
+  .container {
+    grid-template-areas:
+      "header header header"
+      "content content content"
+      "content content content"
+      "sidebar sidebar sidebar"
+      "footer footer footer";
+  }
 }

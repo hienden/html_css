@@ -1,0 +1,15 @@
+/* Căn theo chiều ngang */
+/* margin: 0 auto
+text-align: center */
+
+.container {
+  border: 5px solid green;
+  width: 60%;
+  margin: 0 auto; /*sử dụng với block element (thẻ con so với thẻ cha, thẻ cha ở đây là body và phải xét width của thẻ con = ... */
+  text-align: center; /*căn thẻ p nằm ra giữa Chiều ngang của chính thẻ p, chứ kp thẻ container (1)*/
+}
+.container p {
+  border: 1px solid yellow;
+  width: 60%; /*Bỏ width đi thì thẻ p có width 100% = width thẻ container => (1) thẻ p nằm ra giữa*/
+  /* margin: 0 auto; căn thẻ p nằm ra giữa chiều ngang của thẻ cha là container */
+}
